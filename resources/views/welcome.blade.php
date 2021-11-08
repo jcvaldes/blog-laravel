@@ -3,12 +3,12 @@
 
 <section class="posts container">
     @foreach($posts as $post)
-
     <article class="post no-image">
         <div class="content-post">
             <header class="container-flex space-between">
                 <div class="date">
-                    <span class="c-gray-1">{{ $post->published_at}}</span>
+                    <span class="c-gray-1">{{ $post->published_at->format('M d')}}</span>
+                    {{-- <span class="c-gray-1">{{ $post->published_at->diffForHumans()}}</span> --}}
                 </div>
                 <div class="post-category">
                     <span class="category text-capitalize">i do travel</span>
@@ -31,7 +31,6 @@
             </footer>
         </div>
     </article>
-
     @endforeach
     {{-- <article class="post w-image">
         <figure><img src="img/img-post-1.png" alt="" class="img-responsive"></figure>
