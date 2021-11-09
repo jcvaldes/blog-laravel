@@ -12,8 +12,14 @@ class Post extends Model
     // instancia de carbon
     protected $dates = ['published_at'];
 
+    // relacion many to one
     public function category()  // post->categor-name
     {
         return $this->belongsTo(Category::class);
+    }
+    // relacion many to many
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }
